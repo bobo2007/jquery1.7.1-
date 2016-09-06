@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<!--<script src="jquery2.0.3.js"></script>-->
+</head>
+<body>
+	<div class="foo">1</div>
+	<div class="foo">2</div>
+	<div class="foo">3</div>
+	<script>
+		(function(window,undefined){
+			var document = window.document,
+				navigator = window.navigator,
+				location = window.location;
+			jQuery = (function(){
+				jQuery = function(selector,context,rootjQuery){
+					return new jQuery.fn.init(selector,context,rootjQuery);
+				};
+				var toString = Object.prototype.toString,
+					slice = Array.prototype.slice,
+					push = Array.prototype.push;
+				jQuery.fn = jQuery.prototype = {
+					constructor: jQuery,
+					init: function(){},
+					length: 0,
+					version: "0.1"
+				};
+				jQuery.fn.init.prototype = jQuery.fn;
+				return jQuery;
+			})();
+			window.$ = window.jQuery = jQuery;
+		})(window)
+	</script>
+	<script src="testJS.js"></script>
+</body>
+</html>

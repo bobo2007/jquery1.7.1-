@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<h1>jQuery Test</h1>
+	<script src="jquery_test.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		var defer = jQuery.Deferred();
+		console.log( defer.state() );
+		defer.resolve();
+		console.log( defer.state() );
+	</script>
+</body>
+</html>
